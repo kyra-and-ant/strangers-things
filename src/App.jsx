@@ -4,7 +4,7 @@ import './App.css'
 import Products from './components/Products';
 import NavBar from './components/Navbar';
 import { fetchProducts } from './api-fetch';
-
+import Register from './components/Register'
 function App() {
   const [allProducts, setAllProducts] = useState([]);
 
@@ -26,6 +26,7 @@ console.log(allProducts)
      <NavBar />
      <Routes>
       <Route path='/' element = {<Products />} />
+      <Route path='/register' element = {<Register />} />
      </Routes>
     </>
   )

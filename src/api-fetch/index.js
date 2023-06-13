@@ -17,7 +17,7 @@ export async function registerUser(username, password){
             
         const translatedData = await response.json();
         console.log(translatedData)
-        return translatedData.translatedData
+        return translatedData
     }catch(error){
         console.error(error);
     }
