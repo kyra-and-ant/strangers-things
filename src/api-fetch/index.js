@@ -36,3 +36,25 @@ export async function fetchProducts(){
      
 }
 
+export async function loginUser(username, password){
+    try{
+        let response = await fetch(`${BASE_URL}/users/login`,{
+            method:"POST",
+            headers:{
+                'content-type': "application/json",
+            },
+                body: JSON.stringify({
+                    user: {
+                        username: username,
+                        password: password,
+                    },
+                    }),
+                })
+            const result = await response.json();
+        console.log(result)
+        return result
+    }catch(error){
+        console.error(error);
+    }
+
+};
