@@ -5,6 +5,7 @@ import Products from './components/Products';
 import NavBar from './components/Navbar';
 import { fetchProducts } from './api-fetch';
 import Register from './components/Register'
+import Login from './components/Login';
 import SingleProduct from './components/SingleProduct';
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -28,6 +29,7 @@ console.log(allProducts)
      <Routes>
       <Route path='/' element = {<Products allProducts={allProducts} />} />
       <Route path='/register' element = {<Register />} />
+      <Route path='/login' element = {<Login />} />
       <Route path='/:id' element = {<SingleProduct allProducts = {allProducts} />} />
      </Routes>
     </>
