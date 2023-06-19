@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
             localStorage.setItem('token', result.data.token)
 
-            navigate('/')
+            navigate('/Profile')
         } catch (error){
             console.error(error)
         }

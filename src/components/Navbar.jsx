@@ -7,6 +7,8 @@ export default function NavBar (){
 <Link to="/">Product View  </Link>
 <Link to= '/register'>Register  </Link>
 <Link to='/login'>Login</Link>
+<Link to='/search'>Search</Link>
+
 </div>
     
     )

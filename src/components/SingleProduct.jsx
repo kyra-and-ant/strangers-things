@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
+import Delete from "./Delete";
 
 export default function SingleProduct (props){
    const [specificProduct, setSpecificProduct] = useState(null);
@@ -32,8 +33,9 @@ export default function SingleProduct (props){
            
            
            <p> {specificProduct.title}</p> : null }
-
-        </div>
+           
+</div>
+   
     )
     
 }
