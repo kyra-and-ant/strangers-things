@@ -1,6 +1,9 @@
-const COHORT_NAME = "2304-FTB-ET-WEB-FT";
-const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
+import NewPost from "../components/NewPost"; 
+import { useState } from "react";
 
+
+const COHORT_NAME = "2304-FTB-ET-WEB-FT";
+const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`
 export async function registerUser(username, password){
     try{
         let response = await fetch(`${BASE_URL}/users/register`,{
@@ -58,3 +61,6 @@ export async function loginUser(username, password){
     }
 
 };
+
+
+

@@ -27,11 +27,18 @@ export default function SingleProduct (props){
     console.log(specificProduct)
     return(
         <div>
-          <h2>Single Product View</h2>
+          
            { specificProduct && specificProduct.title ? 
            
-           
-           <p> {specificProduct.title}</p> : null }
+           <div>
+           <p>Title:{specificProduct.title}</p>
+           <p>{specificProduct.description}</p>
+           <p>Location:{specificProduct.location}</p>
+           <p>Delivery(Y/N):{specificProduct.willDeliver}</p>
+           <p>Username:{specificProduct.author.username}</p>
+          
+            </div>
+            : null }
 
         </div>
     )

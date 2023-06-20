@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate} from 'react-router-dom';
 import { registerUser } from "../api-fetch";
-export default function Register(){
+export default function Register(props){
+    const setIsLoggedIn = props.setIsLoggedIn
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -13,7 +14,8 @@ export default function Register(){
            const result = await registerUser(username,password)
            console.log(result)
            localStorage.setItem('token', result.data.token)
-
+           setIsLoggedIn(true)
+           
            navigate('/')
         }catch(error){
             console.error(error)
