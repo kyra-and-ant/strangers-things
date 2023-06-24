@@ -58,3 +58,42 @@ export async function loginUser(username, password){
     }
 
 };
+
+export const deleteProduct = async (id) => {
+    try {
+      const response = await fetch(`${BASE_URL}/posts/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const result = await response.json();
+      console.log(result);
+      return result;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  export const postMessage = async (userId, message) => {
+    try {
+        const response = await fetch(`${BASE_URL}/posts/${userId}/messages`, {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json", 
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            }, 
+            body: JSON.stringify({
+                message: {
+                    content: message,
+                },
+            }),
+        });
+        const result = await response.json();
+        console.log(result);
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+};
