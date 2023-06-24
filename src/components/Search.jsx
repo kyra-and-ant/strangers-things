@@ -1,34 +1,21 @@
 
 import { useState, useEffect } from "react";
-import SingleProduct from "./SingleProduct";
+import SearchProduct from "./SearchProduct";
 
 const COHORT_NAME = "2304-FTB-ET-WEB-FT";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
-function Search() {
+function Search(props) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [allProducts, setAllProducts] = useState([]);
-  let filteredproducts = allProducts.filter((product)=>{
-    let lowercasedName = product.name.toLowerCase();
+  let filteredproducts = props.allProducts.filter((product)=>{
+    console.log(product)
+    let lowercasedName = product.title.toLowerCase();
     let lowercasedQuery = searchQuery.toLowerCase();
 
     if (lowercasedName.includes(lowercasedQuery)) {
       return product;
     }
   });
-  useEffect(() => {
-    async function fetchAllProducts() {
-      try {
-        const response = await fetch((`${BASE_URL}/posts`)
-        );
-        const translatedData = await response.json();
-        setAllProducts(translatedData.data.products);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchAllProducts();
-  },[]);
   return (
     <div id="container">
       <form>
@@ -48,7 +35,7 @@ function Search() {
       <div>
         {filteredproducts.length ? (
           filteredproducts.map((product, idx) => {
-            return <SingleProduct key={idx} product={product} />;
+            return <SearchProduct key={idx} product={product} allProducts={props.allProducts} />;
           })
         ) : (
           <p>Product doesn't exist</p>

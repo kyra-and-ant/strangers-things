@@ -71,8 +71,29 @@ export const deleteProduct = async (id) => {
       const result = await response.json();
       console.log(result);
       return result;
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
     }
   };
-  
+
+  export const postMessage = async (userId, message) => {
+    try {
+        const response = await fetch(`${BASE_URL}/posts/${userId}/messages`, {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json", 
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            }, 
+            body: JSON.stringify({
+                message: {
+                    content: message,
+                },
+            }),
+        });
+        const result = await response.json();
+        console.log(result);
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+};

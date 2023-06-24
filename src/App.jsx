@@ -9,8 +9,10 @@ import Login from './components/Login';
 import SingleProduct from './components/SingleProduct';
 import Profile from './components/Profile';
 import Search from './components/Search';
+import NewPost from './components/NewPost';
 function App() {
   const [allProducts, setAllProducts] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect (()=>{
   async function fetchAllProducts(){
@@ -34,7 +36,8 @@ console.log(allProducts)
       <Route path='/login' element = {<Login />} />
       <Route path='/:id' element = {<SingleProduct allProducts = {allProducts} />} />
       <Route path='/profile' element = {<Profile />} />
-      <Route path='/search' element = {<Search />} />
+      <Route path='/search' element = {<Search allProducts = {allProducts} />} />
+      <Route path='/newPosts' element = {<NewPost setIsLoggedIn = {setIsLoggedIn} />} />
      </Routes>
     </>
   )
