@@ -1,9 +1,10 @@
 import { useState } from "react"
 // import {makePost} from "../api-fetch"
 import {  useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import Register from "./Register";
 const COHORT_NAME = "2304-FTB-ET-WEB-FT";
-const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`
+const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
 export default function NewPost(){
     const [title, setTitle] = useState('')
@@ -68,7 +69,11 @@ console.log(translatedData.data.post)
             setPrice(event.target.value)}} />
     </label>
     <button type="submit">Create new post</button>
+    <Link to= '/profile'>back to profile</Link>
+ 
 </form>
         </div>
+
+       
     )
-}
+} 
