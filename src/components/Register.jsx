@@ -21,7 +21,7 @@ export default function Register(){
     }
     return(
         <div>
-            <h2>Register</h2>
+             <h2 id="register">Register below.</h2>
 <form onSubmit={handleClick}>
     <label>UserName: <input 
     type="text"

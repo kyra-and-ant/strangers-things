@@ -12,11 +12,14 @@ export default function SingleProduct (props){
     })
     return(
         <div>
-          <h2>Single Product View</h2>
+         
            { filteredProduct[0] && filteredProduct[0].title ? 
            
-           
-           <p> {filteredProduct[0].title}</p> : null }
+           <>
+           <p> {filteredProduct[0].title}</p>
+           <p> {filteredProduct[0].description}</p> 
+           <p> {filteredProduct[0].price}</p> 
+           </> : null }
 
            <section>
             <Delete id={filteredProduct[0]._id} />
