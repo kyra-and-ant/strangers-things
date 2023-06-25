@@ -3,6 +3,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border: 2px solid rgb(55, 0, 55);
+}
+body{
+  background-color: yellowgreen
 }
 
 .logo {
@@ -13,12 +17,44 @@
 }
 .productBox{
   display: flex;
-  border: 2px solid black;
+  border: 2px solid rgb(55, 0, 55);
   flex-direction: column;
-  margin: 2rem;
-  padding: 2rem;
+  color: rgb(55, 0, 55);
+  background-color: azure;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: large;
+  /* margin: 2rem;
+  padding: 2rem; */
 }
 #productPage{
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
+  justify-content: space-evenly;
+  flex-wrap:wrap;
+}
+#navBar{
+  display: flex;
+  border: 2px solid black;
+  justify-content: space-evenly;
+}
+#productTitle{
+  text-decoration: underline;
+}
+#header{
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(55, 0, 55);
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(55, 0, 55) ;
+}
+#searchProduct{
+  font-size: small;
+  text-decoration: underline;
+}
+#register{
+  text-decoration: underline;
+}
+#searchSingle{
+  color: rgb(55, 0, 55);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

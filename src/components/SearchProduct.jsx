@@ -6,11 +6,11 @@ export default function SearchProduct(props){
 
     return(
         <div>
-          <h2>Product:</h2>
+           <h2 id="searchProduct">Product:</h2>
            {props.product && props.product.title ? 
            
            
-           <p> {props.product.title}</p> : null }
+           <p id="searchSingle"> {props.product.title}</p> : null }
 
 </div>
    

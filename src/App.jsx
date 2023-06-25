@@ -28,8 +28,9 @@ function App() {
 console.log(allProducts)
   return (
     <>
-     <h1>Stranger's Things</h1>
      <NavBar />
+     <h1 id='header'>Stranger's Things</h1>
+
      <Routes>
       <Route path='/' element = {<Products allProducts={allProducts} />} />
       <Route path='/register' element = {<Register />} />
